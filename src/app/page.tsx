@@ -1,5 +1,6 @@
 import { BG } from "@/components/homeBG";
 import * as motion from "framer-motion/client";
+import ExploreButton from "@/components/ExploreButton";
 
 export default function Home() {
   return (
@@ -26,14 +27,7 @@ export default function Home() {
             world experience! Explore
           </p>
         </div>
-
-        <div className="xl:w-1/2 flex justify-center md:mt-60 xl:mt-0">
-          <div className="w-40 h-40 md:h-52 md:w-52 xl:w-60 xl:h-60 bg-white rounded-full flex items-center justify-center text-black">
-            <p className="text-2xl md:text-4xl font-bold tracking-widest">
-              EXPLORE
-            </p>
-          </div>
-        </div>
+        <ExploreButton />
       </motion.div>
     </div>
   );
