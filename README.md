@@ -21,7 +21,3 @@ pnpm run dev
 ## Desktop
 
 <img src="./public/previewImg.png" />
-
-## Mobile
-
-<img src="./public/previewImgMobile.png" />
