@@ -9,12 +9,9 @@ cd <filename>
 
 <!-- Install the dependencies -->
 npm insall
-pnpm install
 
 <!-- Run the project  -->
 npm run dev
-pnpm run dev
-```
 
 ## Preview
 
