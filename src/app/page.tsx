@@ -1,34 +1,28 @@
-import { BG } from "@/components/homeBG";
-import * as motion from "framer-motion/client";
-import ExploreButton from "@/components/ExploreButton";
+import Link from 'next/link'
+import Navigation from '@/components/Navigation'
 
 export default function Home() {
   return (
-    <div>
-      <BG />
-
-      <motion.div
-        initial={{ scale: 0.9, opacity: 0, filter: "blur(10px)" }}
-        animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.35 }}
-        className="w-full xl:flex justify-between items-center h-[80vh] text-white md:mt-44 xl:mt-0"
-      >
-        <div className="xl:w-1/2 flex flex-col justify-between items-center xl:items-start mb-14 xl:mb-0">
-          <h2 className="uppercase text-lg lg:text-sm md:mb-10 mb-4">
+    <div className="home">
+      <Navigation />
+      <main id="main" className="grid-container grid-container--home">
+        <div>
+          <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
             So, you want to travel to
-          </h2>
-
-          <h1 className="font-medium text-9xl md:mb-14 mb-2">SPACE</h1>
-
-          <p className="text-lg text-center lg:text-justify tracking-wider font-normal text-slate-400 leading-normal w-[96%]">
-            Let’s face it; if you want to go to space, you might as well
-            genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we’ll give you a truly out of this
-            world experience! Explore
+            <span className="fs-900 ff-serif text-white d-block">Space</span>
+          </h1>
+          <p>
+            Let&apos;s face it; if you want to go to space, you might as well genuinely go to 
+            outer space and not hover kind of on the edge of it. Well sit back, and relax 
+            because we&apos;ll give you a truly out of this world experience!
           </p>
         </div>
-        <ExploreButton />
-      </motion.div>
+        <div>
+          <Link href="/destination" className="large-button uppercase ff-serif text-dark bg-white">
+            Explore
+          </Link>
+        </div>
+      </main>
     </div>
-  );
+  )
 }

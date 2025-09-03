@@ -1,35 +1,25 @@
-import type { Metadata } from "next";
-import { Barlow, Heebo } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/navbar";
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  variable: "--text-2",
-  weight: "400",
-});
+import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Space Tourism",
-  description: "Next js Project",
-};
+  title: 'Space Tourism Website',
+  description: 'Explore the wonders of space tourism with our cutting-edge spacecraft and destinations.',
+  icons: {
+    icon: '/assets/favicon-32x32.png',
+  },
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={`${barlow.className}`}>
-        <main className="relative flex flex-col justify-between text-slate-200">
-          <div>
-            <Navbar />
-          </div>
-
-          <div className="container">{children}</div>
-        </main>
+      <body className="bg-dark text-white ff-sans-normal">
+        <a className="skip-to-content" href="#main">Skip to content</a>
+        {children}
       </body>
     </html>
-  );
+  )
 }

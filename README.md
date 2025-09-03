@@ -13,8 +13,4 @@ npm insall
 <!-- Run the project  -->
 npm run dev
 
-## Preview
 
-## Desktop
-
-<img src="./public/previewImg.png" />
