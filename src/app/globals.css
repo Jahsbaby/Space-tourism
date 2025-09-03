@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&family=Handjet:wght@400;700&family=Viaoda+Libre&display=swap');
 
 /* CSS Reset */
 *,
@@ -66,9 +66,9 @@ h6 {
   --fs-200: 0.875rem;
 
   /* Font families */
-  --ff-serif: "Bellefair", serif;
-  --ff-sans-cond: "Barlow Condensed", sans-serif;
-  --ff-sans-normal: "Barlow", sans-serif;
+  --ff-serif: "Viaoda Libre", serif;
+  --ff-sans-cond: "Saira Condensed", sans-serif;
+  --ff-sans-normal: "Handjet", cursive;
 }
 
 @media (min-width: 35em) {
