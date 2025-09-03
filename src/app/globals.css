@@ -112,6 +112,30 @@ main {
   }
 }
 
+/* Navigation Active State - Add this to your globals.css */
+.primary-navigation li.active a {
+  border-right: 4px solid white;
+  background: rgba(255, 255, 255, 0.1);
+  padding-right: 1rem;
+}
+
+/* For mobile navigation */
+@media (max-width: 35rem) {
+  .primary-navigation[data-visible="true"] li.active a {
+    border-right: 4px solid white;
+    border-bottom: none;
+  }
+}
+
+/* For desktop navigation */
+@media (min-width: 45rem) {
+  .primary-navigation li.active a {
+    border-right: none;
+    border-bottom: 4px solid white;
+    padding-bottom: 1rem;
+  }
+}
+
 .destination-image {
   max-width: 200px !important;
   max-height: 200px !important;
