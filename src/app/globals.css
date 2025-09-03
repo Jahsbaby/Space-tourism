@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&family=Handjet:wght@400;700&family=Viaoda+Libre&display=swap');
 
 /* CSS Reset */
@@ -7,14 +11,11 @@
   box-sizing: border-box;
 }
 
-* {
+html, body {
   margin: 0;
   padding: 0;
-}
-
-html,
-body {
-  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -91,6 +92,37 @@ h6 {
   }
 }
 
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+main {
+  width: 100vw !important;
+  overflow-x: hidden;
+}
+.technology-image {
+  max-height: 300px !important;
+}
+
+@media (min-width: 768px) {
+  .technology-image {
+    max-height: 400px !important;
+  }
+}
+
+.destination-image {
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+@media (min-width: 768px) {
+  .destination-image {
+    max-width: 400px !important;
+    max-height: 400px !important;
+  }
+}
 /* Utility classes */
 .flex {
   display: flex;
