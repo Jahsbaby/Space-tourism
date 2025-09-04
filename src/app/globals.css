@@ -1,22 +1,47 @@
-/* ===== FOUNDATIONAL STYLES ===== */
+/* ===== IMPORTS ===== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&family=Handjet:wght@400;700&family=Viaoda+Libre&display=swap');
-/* Reset and Base Styles */
+
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-* {
-  box-sizing: border-box;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
 
-/* Custom Properties */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* ===== CUSTOM PROPERTIES ===== */
 :root {
   /* Colors */
   --clr-dark: 230 35% 7%;
@@ -33,20 +58,37 @@ html, body {
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
-  /* Font families */
+  /* Fonts */
   --ff-serif: "Viaoda Libre", serif;
   --ff-sans-cond: "Saira Condensed", sans-serif;
   --ff-sans-normal: "Handjet", cursive;
 }
-/* ===== LAYOUT CONTAINERS ===== */
 
-/* Background Container */
+@media (min-width: 35em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-500: 1.75rem;
+    --fs-400: 1.125rem;
+  }
+}
+
+/* ===== LAYOUT CONTAINERS ===== */
 .background-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,14 +96,12 @@ html, body {
   z-index: -20;
 }
 
-/* Page Container */
 .page-container {
   width: 100vw;
   min-height: 100vh;
   position: relative;
 }
 
-/* Content Wrapper */
 .content-wrapper {
   width: 100%;
   max-width: 100vw;
@@ -69,36 +109,35 @@ html, body {
   margin: 0 auto;
 }
 
-/* Grid Container Override */
 .grid-container {
   width: 100%;
   max-width: none;
 }
 
-/* Main Element Override */
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin-inline: auto;
+}
+
 main {
   width: 100vw !important;
   overflow-x: hidden;
 }
 
-/* Container Override */
-.container {
-  width: 100% !important;
-  max-width: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
+/* ===== TYPOGRAPHY ===== */
+.ff-serif { font-family: var(--ff-serif); }
+.ff-sans-cond { font-family: var(--ff-sans-cond); }
+.ff-sans-normal { font-family: var(--ff-sans-normal); }
 
-/* ===== NAVIGATION STYLES ===== */
-
-/* Navigation Active State - Mobile (Right Border) */
+/* ===== NAVIGATION ===== */
 .primary-navigation li.active a {
   border-right: 4px solid white;
   background: rgba(255, 255, 255, 0.1);
   padding-right: 1rem;
 }
 
-/* Mobile Navigation Specific */
 @media (max-width: 35rem) {
   .primary-navigation[data-visible="true"] li.active a {
     border-right: 4px solid white;
@@ -106,7 +145,6 @@ main {
   }
 }
 
-/* Desktop Navigation (Bottom Border) */
 @media (min-width: 45rem) {
   .primary-navigation li.active a {
     border-right: none;
@@ -117,61 +155,52 @@ main {
 }
 
 /* ===== PAGE-SPECIFIC BACKGROUNDS ===== */
-
-/* Technology Page Background */
-.technology {
-  min-height: 100vh;
-  background-repeat: no-repeat;
+body {
   background-size: cover;
-  background-position: center;
-  width: 100vw;
+  background-position: bottom center;
 }
 
-/* ===== TECHNOLOGY PAGE LAYOUT ===== */
-
-/* Technology Grid Layout - Mobile First */
-.grid-container--technology {
-  display: grid;
-  grid-template-areas: 
-    "title"
-    "tabs" 
-    "content"
-    "image";
-  gap: 1rem;
+.home {
+  background-image: url(/assets/home/background-home-mobile.jpg);
 }
-
-/* Technology Grid Areas */
-.grid-container--technology > .numbered-title {
-  grid-area: title;
+@media (min-width: 35rem) {
+  .home { background-image: url(/assets/home/background-home-tablet.jpg); }
 }
-
-.grid-container--technology > .number-indicators {
-  grid-area: tabs;
-}
-
-.grid-container--technology > .technology-details {
-  grid-area: content;
-}
-
-.grid-container--technology > picture {
-  grid-area: image;
-}
-
-/* Technology Desktop Layout */
 @media (min-width: 45rem) {
-  .grid-container--technology {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-      "title title"
-      "content image"
-      "tabs image";
-    gap: 2rem;
-  }
+  .home { background-image: url(/assets/home/background-home-desktop.jpg); }
+}
+
+.destination {
+  background-image: url(/assets/destination/background-destination-mobile.jpg);
+}
+@media (min-width: 35rem) {
+  .destination { background-image: url(/assets/destination/background-destination-tablet.jpg); }
+}
+@media (min-width: 45rem) {
+  .destination { background-image: url(/assets/destination/background-destination-desktop.jpg); }
+}
+
+.crew {
+  background-image: url(/assets/crew/background-crew-mobile.jpg);
+}
+@media (min-width: 35rem) {
+  .crew { background-image: url(/assets/crew/background-crew-tablet.jpg); }
+}
+@media (min-width: 45rem) {
+  .crew { background-image: url(/assets/crew/background-crew-desktop.jpg); }
+}
+
+.technology {
+  background-image: url(/assets/technology/background-technology-mobile.jpg);
+}
+@media (min-width: 35rem) {
+  .technology { background-image: url(/assets/technology/background-technology-tablet.jpg); }
+}
+@media (min-width: 45rem) {
+  .technology { background-image: url(/assets/technology/background-technology-desktop.jpg); }
 }
 
 /* ===== IMAGE FIXES ===== */
-
-/* General Image Stretching Prevention */
 .destination-image,
 .technology-image,
 .crew-image {
@@ -181,50 +210,21 @@ main {
   object-fit: contain !important;
 }
 
-/* Technology Image Specific */
-.grid-container--technology picture img {
-  object-fit: contain !important;
-  width: auto;
-  height: auto;
-  max-height: 300px;
-}
-
+.technology-image { max-height: 300px !important; }
 @media (min-width: 768px) {
-  .grid-container--technology picture img {
-    max-height: 400px;
-  }
+  .technology-image { max-height: 400px !important; }
 }
-
 @media (min-width: 1280px) {
-  .grid-container--technology picture img {
-    max-height: 500px;
-  }
+  .technology-image { max-height: 500px !important; }
 }
 
-/* Destination Image Specific */
 .destination-image {
   max-width: 200px !important;
   max-height: 200px !important;
 }
-
 @media (min-width: 768px) {
-  .destination-image {
-    max-width: 400px !important;
-    max-height: 400px !important;
-  }
+  .destination-image { max-width: 400px !important; max-height: 400px !important; }
 }
-
 @media (min-width: 1280px) {
-  .destination-image {
-    max-width: 350px !important;
-    max-height: 350px !important;
-  }
-}
-
-/* ===== UTILITY CLASSES ===== */
-
-/* Navigation Link Active State Class */
-.nav-link-active {
-  border-right: 4px solid white;
-  background: rgba(255, 255, 255, 0.1);
+  .destination-image { max-width: 350px !important; max-height: 350px !important; }
 }
