@@ -1,8 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&family=Handjet:wght@400;700&family=Viaoda+Libre&display=swap');
 
 /* CSS Reset */
 *,
@@ -11,16 +8,20 @@
   box-sizing: border-box;
 }
 
-html, body {
+* {
   margin: 0;
   padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-primary);
 }
 
 img,
@@ -49,14 +50,13 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* Custom Properties */
 :root {
-  /* Colors */
+  
   --clr-dark: 230 35% 7%;
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
 
-  /* Font sizes */
+  
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
@@ -66,11 +66,10 @@ h6 {
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
-  /* Font families */
-  --ff-serif: "Viaoda Libre", serif;
-  --ff-sans-cond: "Saira Condensed", sans-serif;
-  --ff-sans-normal: "Handjet", cursive;
+  --ff-primary: 'Barlow Condensed', sans-serif;
 }
+
+
 
 @media (min-width: 35em) {
   :root {
@@ -93,61 +92,6 @@ h6 {
 }
 
 
-.container {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-main {
-  width: 100vw !important;
-  overflow-x: hidden;
-}
-.technology-image {
-  max-height: 300px !important;
-}
-
-@media (min-width: 768px) {
-  .technology-image {
-    max-height: 400px !important;
-  }
-}
-
-/* Navigation Active State - Add this to your globals.css */
-.primary-navigation li.active a {
-  border-right: 4px solid white;
-  background: rgba(255, 255, 255, 0.1);
-  padding-right: 1rem;
-}
-
-/* For mobile navigation */
-@media (max-width: 35rem) {
-  .primary-navigation[data-visible="true"] li.active a {
-    border-right: 4px solid white;
-    border-bottom: none;
-  }
-}
-
-/* For desktop navigation */
-@media (min-width: 45rem) {
-  .primary-navigation li.active a {
-    border-right: none;
-    border-bottom: 4px solid white;
-    padding-bottom: 1rem;
-  }
-}
-
-.destination-image {
-  max-width: 200px !important;
-  max-height: 200px !important;
-}
-
-@media (min-width: 768px) {
-  .destination-image {
-    max-width: 400px !important;
-    max-height: 400px !important;
-  }
-}
-/* Utility classes */
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -202,8 +146,6 @@ main {
 .skip-to-content:focus {
   transform: translateY(0);
 }
-
-/* Colors */
 .bg-dark { background-color: hsl(var(--clr-dark)); }
 .bg-accent { background-color: hsl(var(--clr-light)); }
 .bg-white { background-color: hsl(var(--clr-white)); }
@@ -212,7 +154,6 @@ main {
 .text-accent { color: hsl(var(--clr-light)); }
 .text-white { color: hsl(var(--clr-white)); }
 
-/* Typography */
 .ff-serif { font-family: var(--ff-serif); }
 .ff-sans-cond { font-family: var(--ff-sans-cond); }
 .ff-sans-normal { font-family: var(--ff-sans-normal); }
@@ -252,7 +193,7 @@ main {
   color: hsl(var(--clr-white) / 0.25);
 }
 
-/* Components */
+
 .large-button {
   font-size: 2rem;
   position: relative;
@@ -291,7 +232,6 @@ main {
   transform: scale(1.5);
 }
 
-/* Primary header */
 .logo {
   margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }
@@ -307,7 +247,7 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: hsl(var(--clr-white) / 0.05);
+  background: transparent;
   backdrop-filter: blur(1.5rem);
 }
 
@@ -392,7 +332,6 @@ main {
     position: relative;
     height: 1px;
     width: 100%;
-    margin-right: -2.5rem;
     background: hsl(var(--clr-white) / 0.25);
     order: 1;
   }
@@ -410,7 +349,7 @@ main {
   cursor: pointer;
   padding: var(--underline-gap, 0.5rem) 0;
   border: 0;
-  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+  border-bottom: 1px solid hsl(var(--clr-white) / 0);
   background-color: transparent;
   transition: border-color 0.3s ease;
 }
@@ -470,13 +409,11 @@ main {
   color: hsl(var(--clr-dark));
 }
 
-/* Page specific background */
 body {
   background-size: cover;
   background-position: bottom center;
 }
 
-/* Home */
 .home {
   background-image: url(/assets/home/background-home-mobile.jpg);
 }
@@ -494,7 +431,7 @@ body {
   }
 }
 
-/* Destination */
+
 .destination {
   background-image: url(/assets/destination/background-destination-mobile.jpg);
 }
@@ -512,7 +449,7 @@ body {
   }
 }
 
-/* Crew */
+
 .crew {
   background-image: url(/assets/crew/background-crew-mobile.jpg);
 }
@@ -530,7 +467,7 @@ body {
   }
 }
 
-/* Technology */
+
 .technology {
   background-image: url(/assets/technology/background-technology-mobile.jpg);
 }
@@ -548,7 +485,7 @@ body {
   }
 }
 
-/* Layout */
+
 .grid-container {
   text-align: center;
   display: grid;
@@ -565,7 +502,7 @@ body {
   grid-area: title;
 }
 
-/* Destination layout */
+
 .grid-container--destination {
   --flow-space: 2rem;
   grid-template-areas:
@@ -600,14 +537,13 @@ body {
   font-size: 1.75rem;
 }
 
-/* Crew layout */
 .grid-container--crew {
   --flow-space: 2rem;
   grid-template-areas:
     'title'
-    'image'
+    'content'
     'tabs'
-    'content';
+    'image';
 }
 
 .grid-container--crew > picture {
@@ -628,14 +564,13 @@ body {
   color: hsl(var(--clr-white) / 0.5);
 }
 
-/* Technology layout */
 .grid-container--technology {
   --flow-space: 2rem;
   grid-template-areas:
     'title'
-    'image'
+    'content'
     'tabs'
-    'content';
+    'image';
 }
 
 .grid-container--technology > picture {
@@ -721,7 +656,7 @@ body {
   .grid-container--crew > picture {
     grid-column: span 2;
     align-self: end;
-    max-width: 90%;
+    width: 100%;
   }
 
   .grid-container--technology {
@@ -740,6 +675,6 @@ body {
   .grid-container--technology > picture {
     grid-column: span 2;
     justify-self: end;
-    max-width: 90%;
+    width: 100%;
   }
 }
