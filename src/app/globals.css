@@ -134,7 +134,7 @@ main {
 /* ===== NAVIGATION ===== */
 .primary-navigation li.active a {
   border-right: 4px solid white;
-  background: rgba(255, 255, 255, 0.1);
+  background: #000;
   padding-right: 1rem;
 }
 
