@@ -16,6 +16,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -115,9 +116,9 @@ h6 {
 }
 
 .container {
-  padding-inline: 2em;
-  margin-inline: auto;
-  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 100%;
 }
 
 .sr-only {
@@ -271,12 +272,15 @@ h6 {
     z-index: 1000;
     inset: 0 0 0 30%;
     list-style: none;
-    padding: min(20rem, 15vh) 2rem;
-    margin: 0;
+    padding: min(20rem, 15vh)0;
     flex-direction: column;
     transform: translateX(100%);
     transition: transform 500ms ease-in-out;
+    width: 100vw;         
+    margin: 0;           
+    border-bottom: 1px solid hsl(var(--clr-white) / 0.2);
   }
+  
 
   .primary-navigation[data-visible="true"] {
     transform: translateX(0);
@@ -452,6 +456,9 @@ body {
 
 .crew {
   background-image: url(/assets/crew/background-crew-mobile.jpg);
+  max-width: 100%;
+  height: auto; 
+  object-fit: contain;
 }
 
 @media (min-width: 35rem) {
@@ -470,6 +477,9 @@ body {
 
 .technology {
   background-image: url(/assets/technology/background-technology-mobile.jpg);
+  max-width: 100%;  
+  height: auto;    
+  object-fit: contain;
 }
 
 @media (min-width: 35rem) {
